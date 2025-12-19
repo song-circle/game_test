@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뱀파이어 서바이버</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 시작 화면 -->
+    <div id="start-screen" class="screen">
+        <div class="title-container">
+            <h1 class="game-title">🧛 VAMPIRE<br>SURVIVOR 🦇</h1>
+            <p class="subtitle">어둠 속에서 살아남아라</p>
+        </div>
+        <button id="start-btn" class="pixel-btn">▶ 게임 시작</button>
+        <div class="controls-info">
+            <p>🎮 조작법</p>
+            <p>WASD 또는 ←↑↓→ : 이동</p>
+            <p>공격은 자동!</p>
+        </div>
+    </div>
+
+    <!-- 게임 화면 -->
+    <div id="game-screen" class="screen hidden">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-left">
+                <div class="hp-bar">
+                    <div class="hp-fill" id="hp-fill"></div>
+                    <span class="hp-text" id="hp-text">100/100</span>
+                </div>
+                <div class="exp-bar">
+                    <div class="exp-fill" id="exp-fill"></div>
+                    <span class="exp-text" id="exp-text">Lv.1</span>
+                </div>
+            </div>
+            <div class="hud-center">
+                <div class="timer" id="timer">00:00</div>
+                <div class="kill-count">💀 <span id="kill-count">0</span></div>
+            </div>
+            <div class="hud-right">
+                <div class="weapons" id="weapons-display"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 레벨업 화면 -->
+    <div id="levelup-screen" class="screen hidden">
+        <div class="levelup-container">
+            <h2 class="levelup-title">⬆️ LEVEL UP!</h2>
+            <div class="upgrade-options" id="upgrade-options"></div>
+        </div>
+    </div>
+
+    <!-- 게임 오버 화면 -->
+    <div id="gameover-screen" class="screen hidden">
+        <div class="gameover-container">
+            <h1 class="gameover-title">💀 GAME OVER</h1>
+            <div class="stats">
+                <p>⏱️ 생존 시간: <span id="final-time">00:00</span></p>
+                <p>💀 처치 수: <span id="final-kills">0</span></p>
+                <p>📊 레벨: <span id="final-level">1</span></p>
+            </div>
+            <button id="restart-btn" class="pixel-btn">🔄 다시 시작</button>
+        </div>
+    </div>
+
+    <!-- 승리 화면 -->
+    <div id="victory-screen" class="screen hidden">
+        <div class="victory-container">
+            <h1 class="victory-title">🏆 VICTORY!</h1>
+            <p class="victory-subtitle">5분을 생존했습니다!</p>
+            <div class="stats">
+                <p>💀 처치 수: <span id="victory-kills">0</span></p>
+                <p>📊 최종 레벨: <span id="victory-level">1</span></p>
+            </div>
+            <button id="victory-restart-btn" class="pixel-btn">🔄 다시 시작</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
